@@ -13,3 +13,7 @@ Drivetrain::Drivetrain() {
 void Drivetrain::TuxDrive() {
     m_drivetrain.ArcadeDrive(-m_controller.GetLeftY(), -m_controller.GetRightX());
 }
+
+void Drivetrain::Intake(){
+    m_drivetrain.m_intake.Set(0.75);
+}
