@@ -15,5 +15,5 @@ void Drivetrain::TuxDrive() {
 }
 
 void Drivetrain::Intake(){
-    m_drivetrain.m_intake.Set(0.75);
+    m_intake.Set(0.75);
 }
