@@ -6,6 +6,7 @@
 #include <frc/motorcontrol/PWMSparkMax.h>
 #include <frc/motorcontrol/MotorControllerGroup.h>
 #include <frc/motorcontrol/Spark.h>
+#include <frc/Compressor.h>
 
 class Drivetrain {
     public:
@@ -28,4 +29,6 @@ class Drivetrain {
 
         //create a differential drive using the two previously defined groups.
         frc::DifferentialDrive m_drivetrain{m_left, m_right};
+
+        frc::Compressor pcmCompressor{PNEUMATICS, frc::PneumaticsModuleType::CTREPCM};
 };

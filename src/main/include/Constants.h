@@ -10,3 +10,5 @@ const int ARM_MOTOR = 0;
 
 //Xbox controller usb port.
 const int CONTROLLER = 0;
+
+const int PNEUMATICS = 0;
