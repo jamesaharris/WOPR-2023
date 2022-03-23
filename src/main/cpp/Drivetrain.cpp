@@ -9,16 +9,12 @@ Drivetrain::Drivetrain() {
     m_left.SetInverted(true);
     pcmCompressor.EnableDigital();
     pcmCompressor.Disable();
+    pcmCompressor.EnableDigital();
 }
 
 //arcade drive, left stick forward/backward right stick left/right.
 void Drivetrain::TuxDrive() {
     m_drivetrain.ArcadeDrive(-m_controller.GetLeftY(), -m_controller.GetRightX());
-    if(m_controller.GetAButton()) {
-        pcmCompressor.EnableDigital();
-    } else {
-        pcmCompressor.Disable();
-    }
 }
 
 void Drivetrain::Intake(){
