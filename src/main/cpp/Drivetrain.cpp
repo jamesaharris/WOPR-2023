@@ -3,16 +3,18 @@
 
 //define the xbox controller.
 const frc::XboxController m_controller{CONTROLLER};
-bool sol1tog = 0;
+bool sol1tog = 1;
 bool apressed = false;
 
 Drivetrain::Drivetrain() {
     //inverse one side of the drivetrain.
     m_left.SetInverted(true);
-    pcmCompressor.EnableDigital();
+    //enable compressor.
     pcmCompressor.Disable();
     pcmCompressor.EnableDigital();
+    //set solenoid to false.
     DoublePCM1.Set(frc::DoubleSolenoid::Value::kOff);
+    DoublePCM1.Set(frc::DoubleSolenoid::Value::kForward);
 }
 
 //arcade drive, left stick forward/backward right stick left/right.
