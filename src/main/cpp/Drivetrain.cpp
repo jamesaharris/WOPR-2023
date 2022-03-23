@@ -29,8 +29,14 @@ void Drivetrain::TuxDrive() {
     }
 }
 
-void Drivetrain::Intake() {
-    m_intake.Set(0.75);
+//the intake.
+void Drivetrain::Intake() { 
+    if(m_controller.GetBButton()){
+        m_intake.Set(0.75);
+    }
+    else{
+        m_intake.Set(0);
+    }
 }
 
 //toggle solenoid group 1.

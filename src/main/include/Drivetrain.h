@@ -19,7 +19,7 @@ class Drivetrain {
 
     private:
         //define intake motor
-        frc::Spark m_intake{ARM_MOTOR};
+        frc::Spark m_intake{ROLLER_MOTOR};
         //define left motors and group them.
         frc::Spark m_frontLeft{FRONT_LEFT_MOTOR};
         frc::Spark m_rearLeft{BACK_LEFT_MOTOR};
