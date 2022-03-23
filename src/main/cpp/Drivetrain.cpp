@@ -18,5 +18,11 @@ void Drivetrain::TuxDrive() {
 }
 
 void Drivetrain::Intake(){
-    m_intake.Set(0.75);
+    
+    if(m_controller.GetBButton()){
+        m_intake.Set(0.75);
+    }
+    else{
+        m_intake.Set(0);
+    }
 }

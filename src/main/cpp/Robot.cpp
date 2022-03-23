@@ -61,6 +61,8 @@ void Robot::TeleopInit() {}
 void Robot::TeleopPeriodic() {
   //start TuxDrive.
   m_drivetrain.TuxDrive();
+  //check for intake inputs
+  m_drivetrain.Intake();
 }
 
 void Robot::DisabledInit() {}
