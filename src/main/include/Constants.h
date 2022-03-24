@@ -1,11 +1,11 @@
 #pragma once
 
 //Motor ports.
-const int FRONT_LEFT_MOTOR = 3;
-const int FRONT_RIGHT_MOTOR = 4;
-const int BACK_LEFT_MOTOR = 7;
-const int BACK_RIGHT_MOTOR = 8;
-const int ROLLER_MOTOR = 2;
+const int FRONT_LEFT_MOTOR = 13;
+const int FRONT_RIGHT_MOTOR = 3;
+const int BACK_LEFT_MOTOR = 12;
+const int BACK_RIGHT_MOTOR = 2;
+const int ROLLER_MOTOR = 1;
 const int ARM_MOTOR = 0;
 
 //Xbox controller usb port.
