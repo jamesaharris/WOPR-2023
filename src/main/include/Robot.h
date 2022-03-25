@@ -9,7 +9,7 @@
 #include <frc/TimedRobot.h>
 #include <frc/smartdashboard/SendableChooser.h>
 #include <frc/XboxController.h>
-#include "Drivetrain.h"
+#include "Drive.h"
 #include "Constants.h"
 
 class Robot : public frc::TimedRobot {
@@ -33,5 +33,5 @@ class Robot : public frc::TimedRobot {
   const std::string kAutoNameCustom = "My Auto";
   std::string m_autoSelected;
   //create a Drivetrain object to use for TuxDrive.
-  Drivetrain m_drivetrain{};
+  Drive m_drive{};
 };

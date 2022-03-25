@@ -52,17 +52,15 @@ void Robot::AutonomousPeriodic() {
   if (m_autoSelected == kAutoNameCustom) {
     // Custom Auto goes here
   } else {
-    // Default Auto goes here
+    m_drive.Autonomous();
   }
 }
 
 void Robot::TeleopInit() {}
 
 void Robot::TeleopPeriodic() {
-  //start TuxDrive.
-  m_drivetrain.TuxDrive();
-  //check for intake inputs
-  m_drivetrain.Intake();
+  //TUXDRIVE
+  m_drive.TuxDrive();
 }
 
 void Robot::DisabledInit() {}

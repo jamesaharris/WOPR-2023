@@ -4,21 +4,21 @@
 #include <frc/Timer.h>
 #include <frc/drive/DifferentialDrive.h>
 //#include <frc/motorcontrol/PWMSparkMax.h>
-//#include <frc/motorcontrol/MotorControllerGroup.h>
+#include <frc/motorcontrol/MotorControllerGroup.h>
 #include <frc/motorcontrol/Spark.h>
 #include <frc/Compressor.h>
 #include <frc/Solenoid.h>
 #include <frc/DoubleSolenoid.h>
 #include "ctre/Phoenix.h"
-#include <frc/SpeedControllerGroup.h>
+//#include <frc/SpeedControllerGroup.h>
 
-class Drivetrain {
+class Drive {
     public:
-        Drivetrain();
+        Drive();
         void TuxDrive();
         void Intake();
         void DSolenoid1Toggle();
-        void Rampage();
+        void Autonomous();
 
     private:
         //define intake motor
@@ -26,12 +26,12 @@ class Drivetrain {
         //define left motors and group them.
         WPI_TalonSRX m_frontLeft{FRONT_LEFT_MOTOR};
         WPI_TalonSRX m_rearLeft{BACK_LEFT_MOTOR};
-        frc::SpeedControllerGroup m_left{m_frontLeft, m_rearLeft};
+        frc::MotorControllerGroup m_left{m_frontLeft, m_rearLeft};
 
         //define right motors and group them.
         WPI_TalonSRX m_frontRight{FRONT_RIGHT_MOTOR};
         WPI_TalonSRX m_rearRight{BACK_RIGHT_MOTOR};
-        frc::SpeedControllerGroup m_right{m_frontRight, m_rearRight};
+        frc::MotorControllerGroup m_right{m_frontRight, m_rearRight};
 
         //create a differential drive using the two previously defined groups.
         frc::DifferentialDrive m_drivetrain{m_left, m_right};
