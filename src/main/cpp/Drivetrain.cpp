@@ -69,13 +69,16 @@ void Drivetrain::Rampage(){
     double finalPower = 0.5;
 
     //during ramp up time slowly increase motor power
-    while(!timer.HasElapsed(rampTime)) {
-        if (m_right.Get() <= finalPower && m_left.Get() <= finalPower){
-            m_right.Set(startPower + 0.1);
-            m_left.Set(startPower + 0.1);
+    if (m_right.Get() != 0.0 && m_left.Get() != 0.0){
+        while(!timer.HasElapsed(rampTime)) {
+            if (m_right.Get() <= finalPower && m_left.Get() <= finalPower){
+                m_right.Set(startPower + 0.1);
+                m_left.Set(startPower + 0.1);
+            }
+            startPower += 0.1;
         }
-        
     }
+    
 
     timer.Stop();
 }
