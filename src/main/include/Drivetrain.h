@@ -18,6 +18,7 @@ class Drivetrain {
         void TuxDrive();
         void Intake();
         void DSolenoid1Toggle();
+        void Rampage();
 
     private:
         //define intake motor
@@ -38,4 +39,8 @@ class Drivetrain {
         //define compressor and solenoid groups.
         frc::Compressor pcmCompressor{PNEUMATICS, frc::PneumaticsModuleType::CTREPCM};
         frc::DoubleSolenoid DoublePCM1{frc::PneumaticsModuleType::CTREPCM, 1, 2};
+
+        //define timer
+        
+
 };
