@@ -5,10 +5,15 @@
 
 //define the xbox controller.
 const frc::XboxController m_controller{CONTROLLER};
-bool sol1tog = 1;
-bool apressed = false;
+bool sol1tog;
+bool apressed;
+units::second_t startTime;
 
 Drive::Drive() {
+    startTime = m_timer.GetFPGATimestamp();
+
+    sol1tog = 1;
+    apressed  = false;
     //inverse one side of the drivetrain.
     m_left.SetInverted(true);
     //enable compressor.
@@ -70,5 +75,9 @@ void Drive::DSolenoid1Toggle() {
 }
 
 void Drive::Autonomous() {
-    
+    if(m_timer.GetFPGATimestamp() - startTime < (units::second_t)2) {
+        m_drivetrain.ArcadeDrive(-1.0, 0.0);
+    } else {
+        m_drivetrain.ArcadeDrive(0.0, 0.0);
+    }
 }
