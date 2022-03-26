@@ -108,3 +108,7 @@ void Drive::Autonomous() {
         m_drivetrain.ArcadeDrive(0.0, 0.0);
     }
 }
+
+void Drive::TimerReset() {
+    startTime = m_timer.GetFPGATimestamp();
+}

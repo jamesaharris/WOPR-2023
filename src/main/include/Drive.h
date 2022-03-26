@@ -20,6 +20,7 @@ class Drive {
         void DSolenoid1Toggle();
         void DSolenoid2Toggle();
         void Autonomous();
+        void TimerReset();
 
     private:
         //define intake motor
