@@ -9,8 +9,8 @@ bool sol1tog;
 bool sol2tog;
 bool apressed;
 bool bpressed;
-bool xpressed:
-units::seconds_t startTime;
+bool xpressed;
+units::second_t startTime;
 
 Drive::Drive() {
     startTime = m_timer.GetFPGATimestamp();

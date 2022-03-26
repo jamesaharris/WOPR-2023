@@ -43,6 +43,5 @@ class Drive {
         frc::DoubleSolenoid DoublePCM2{frc::PneumaticsModuleType::CTREPCM, 0, 3};
 
         //define timer
-        
-
+        frc::Timer m_timer;
 };
