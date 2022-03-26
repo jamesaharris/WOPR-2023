@@ -6,14 +6,20 @@
 //define the xbox controller.
 const frc::XboxController m_controller{CONTROLLER};
 bool sol1tog;
+bool sol2tog;
 bool apressed;
-units::second_t startTime;
+bool bpressed;
+bool xpressed:
+units::seconds_t startTime;
 
 Drive::Drive() {
     startTime = m_timer.GetFPGATimestamp();
 
     sol1tog = 1;
+    sol2tog = 1;
     apressed  = false;
+    bpressed = false;
+    xpressed = false;
     //inverse one side of the drivetrain.
     m_left.SetInverted(true);
     //enable compressor.
@@ -50,10 +56,14 @@ void Drive::TuxDrive() {
 //the intake.
 void Drive::Intake() { 
     if(m_controller.GetBButton()){
-        m_intake.Set(0.75);
+        if(!bpressed){
+            m_intake.Set(0.75);
+            bpressed = true;
+        }
     }
-    else{
+    else if (bpressed){
         m_intake.Set(0);
+        bpressed = false;
     }
 }
 
@@ -67,10 +77,27 @@ void Drive::DSolenoid1Toggle() {
             } else {
                 DoublePCM1.Set(frc::DoubleSolenoid::Value::kReverse);
             }
+            apressed = true;
         }
-        apressed = true;
-    } else {
+    } else if(apressed){
         apressed = false;
+    }
+}
+
+//toggle solenoid group 2 if button X is pressed.
+void Drive::DSolenoid2Toggle() {
+    if(m_controller.GetXButton()) {
+        if(!xpressed){
+            sol2tog = !sol2tog;
+            if(sol1tog) {
+                DoublePCM2.Set(frc::DoubleSolenoid::Value::kForward);
+            } else {
+                DoublePCM2.Set(frc::DoubleSolenoid::Value::kReverse);
+            }
+            xpressed = true;
+        }
+    } else if(xpressed){
+        xpressed = false;
     }
 }
 

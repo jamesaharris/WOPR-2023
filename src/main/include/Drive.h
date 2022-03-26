@@ -18,6 +18,7 @@ class Drive {
         void TuxDrive();
         void Intake();
         void DSolenoid1Toggle();
+        void DSolenoid2Toggle();
         void Autonomous();
 
     private:
@@ -39,6 +40,7 @@ class Drive {
         //define compressor and solenoid groups.
         frc::Compressor pcmCompressor{PNEUMATICS, frc::PneumaticsModuleType::CTREPCM};
         frc::DoubleSolenoid DoublePCM1{frc::PneumaticsModuleType::CTREPCM, 1, 2};
+        frc::DoubleSolenoid DoublePCM2{frc::PneumaticsModuleType::CTREPCM, 0, 3};
 
         //define timer
         
