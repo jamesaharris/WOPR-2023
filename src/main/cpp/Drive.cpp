@@ -48,22 +48,17 @@ Drive::Drive() {
 
 //arcade drive, left stick forward/backward right stick left/right.
 void Drive::TuxDrive() {
-    m_drivetrain.ArcadeDrive(-m_controller.GetLeftY(), -m_controller.GetRightX());
+    m_drivetrain.ArcadeDrive(m_controller.GetLeftY(), -m_controller.GetRightX() * 0.6);
     DSolenoid1Toggle();
     Intake();
 }
 
 //the intake.
 void Drive::Intake() { 
-    if(m_controller.GetBButton()){
-        if(!bpressed){
-            m_intake.Set(0.75);
-            bpressed = true;
-        }
-    }
-    else if (bpressed){
+    if(m_controller.GetLeftTriggerAxis() > 0.0){
+        m_intake.Set(0.75);
+    } else {
         m_intake.Set(0);
-        bpressed = false;
     }
 }
 
