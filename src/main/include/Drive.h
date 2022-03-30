@@ -21,10 +21,12 @@ class Drive {
         void DSolenoid2Toggle();
         void Autonomous();
         void TimerReset();
+        void OutTake();
 
     private:
         //define intake motor
         WPI_TalonSRX m_intake{ROLLER_MOTOR};
+        WPI_TalonSRX m_outtake{SHOOTER_MOTOR};
         //define left motors and group them.
         WPI_TalonSRX m_frontLeft{FRONT_LEFT_MOTOR};
         WPI_TalonSRX m_rearLeft{BACK_LEFT_MOTOR};

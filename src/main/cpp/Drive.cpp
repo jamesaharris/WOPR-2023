@@ -62,6 +62,17 @@ void Drive::Intake() {
     }
 }
 
+void Drive::OutTake()
+{
+    if(m_controller.GetRightTriggerAxis() > 0.0)
+    {
+        m_outtake.Set(1);
+    } else {
+        m_outtake.Set(0);
+    }
+}
+
+
 //toggle solenoid group 1 if button A is pressed.
 void Drive::DSolenoid1Toggle() {
     if(m_controller.GetAButton()) {
