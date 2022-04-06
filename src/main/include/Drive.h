@@ -22,6 +22,7 @@ class Drive {
         void Autonomous();
         void TimerReset();
         void OutTake();
+        void Climb();
 
     private:
         //define intake motor
@@ -36,6 +37,8 @@ class Drive {
         WPI_TalonSRX m_frontRight{FRONT_RIGHT_MOTOR};
         WPI_TalonSRX m_rearRight{BACK_RIGHT_MOTOR};
         frc::MotorControllerGroup m_right{m_frontRight, m_rearRight};
+
+        WPI_TalonFX m_climb{CLIMB_MOTOR};
 
         //create a differential drive using the two previously defined groups.
         frc::DifferentialDrive m_drivetrain{m_left, m_right};

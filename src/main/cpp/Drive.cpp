@@ -52,6 +52,7 @@ void Drive::TuxDrive() {
     DSolenoid1Toggle();
     Intake();
     OutTake();
+    Climb();
 }
 
 //the intake.
@@ -107,6 +108,16 @@ void Drive::DSolenoid2Toggle() {
         }
     } else if(xpressed){
         xpressed = false;
+    }
+}
+
+void Drive::Climb() {
+    if (m_controller.GetBButton()) {
+        m_climb.Set(TalonFXControlMode::PercentOutput, 0.15); // going down
+    } else if (m_controller.GetYButton()) {
+        m_climb.Set(TalonFXControlMode::PercentOutput, -0.15); // going up
+    } else {
+        m_climb.Set(TalonFXControlMode::PercentOutput, 0.0);
     }
 }
 

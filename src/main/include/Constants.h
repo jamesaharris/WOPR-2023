@@ -9,5 +9,6 @@ const int ROLLER_MOTOR = 3;
 const int SHOOTER_MOTOR = 5;
 //Xbox controller usb port.
 const int CONTROLLER = 0;
+const int CLIMB_MOTOR = 4;
 
 const int PNEUMATICS = 0;
