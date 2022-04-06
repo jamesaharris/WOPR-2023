@@ -117,3 +117,13 @@ void Drive::Autonomous() {
 void Drive::TimerReset() {
     startTime = m_timer.GetFPGATimestamp();
 }
+
+void Drive::Climb() {
+    if(m_controller.GetLeftTriggerAxis() > 0.0){
+        m_climb.Set(m_controller.GetLeftTriggerAxis());
+    } else if(m_controller.GetRightTriggerAxis() > 0.0) {
+        m_climb.Set(m_controller.GetRightTriggerAxis());
+    } else {
+        m_climb.Set(0.0);
+    }
+}
