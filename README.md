@@ -2,4 +2,4 @@
 
 `This is the public repo where we will be working on code and posting CAD/Brainstorming in the off season`
 
-The main branch is code. The Eng branch is for our engineering projects side. 
+The main branch is code. The Wiki is for our engineering projects side. 
