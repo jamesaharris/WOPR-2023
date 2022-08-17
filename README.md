@@ -1,2 +1,5 @@
-# WOPR_2022
-This is the new C++ repo!
+# Mill Creek Robotics Codebase and Engineering Progress
+
+`This is the public repo where we will be working on code and posting CAD/Brainstorming in the off season`
+
+The main branch is code. The Eng branch is for our engineering projects side. 
